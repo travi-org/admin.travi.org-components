@@ -50,7 +50,7 @@
     "@storybook/addon-links": "5.3.21",
     "@storybook/react": "5.3.21",
     "@travi/any": "2.0.17",
-    "@travi/babel-preset": "3.0.60",
+    "@travi/babel-preset": "3.0.61",
     "@travi/eslint-config-travi": "1.8.8",
     "babel-loader": "8.2.2",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
