@@ -19,9 +19,8 @@
     "build:js": "rollup -c",
     "build:storybook": "build-storybook -o dist/storybook --quiet",
     "prepack": "run-s build",
-    "precommit": "npm test",
-    "commitmsg": "commitlint -e",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "prepare": "husky install"
   },
   "publishConfig": {
     "access": "public"
