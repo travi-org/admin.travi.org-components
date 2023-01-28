@@ -3,9 +3,8 @@ name: Node.js CI
   push:
     branches:
       - master
-      - alpha
       - beta
-      - 'renovate/**'
+      - renovate/**
   pull_request:
     types:
       - opened
@@ -18,49 +17,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Read .nvmrc
-        run: 'echo ::set-output name=NVMRC::$(cat .nvmrc)'
-        id: nvm
       - name: Setup node
         uses: actions/setup-node@v2
         with:
-          node-version: '${{ steps.nvm.outputs.NVMRC }}'
-      - uses: bahmutov/npm-install@v1
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm clean-install
       - run: npm test
       - name: Upload coverage data to Codecov
-        run: 'npm run coverage:report'
+        run: npm run coverage:report
   release:
-    needs: verify
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Read .nvmrc
-        run: 'echo ::set-output name=NVMRC::$(cat .nvmrc)'
-        id: nvm
-      - name: Setup node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '${{ steps.nvm.outputs.NVMRC }}'
-      - uses: bahmutov/npm-install@v1
-      - name: semantic-release
-        run: npx semantic-release
-        env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-          NPM_TOKEN: '${{ secrets.NPM_PUBLISH_TOKEN }}'
+    needs:
+      - verify
+    uses: >-
+      form8ion/.github/.github/workflows/release-package-semantic-release-19.yml@master
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
   storybook:
     if: github.ref == 'refs/heads/master'
     needs: verify
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Read .nvmrc
-        run: 'echo ::set-output name=NVMRC::$(cat .nvmrc)'
-        id: nvm
       - name: Setup node
         uses: actions/setup-node@v2
         with:
-          node-version: '${{ steps.nvm.outputs.NVMRC }}'
-      - uses: bahmutov/npm-install@v1
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm clean-install
       - run: npm run build
       - name: Configure git user for relase to GitHub Pages
         run: |
