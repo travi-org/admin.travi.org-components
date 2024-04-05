@@ -57,7 +57,7 @@
     "chai": "4.3.7",
     "cheerio": "1.0.0-rc.12",
     "codecov": "3.8.3",
-    "commitlint-config-travi": "1.4.27",
+    "commitlint-config-travi": "1.4.49",
     "cpy-cli": "4.2.0",
     "css-loader": "5.2.7",
     "cz-conventional-changelog": "3.3.0",
