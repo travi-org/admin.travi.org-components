@@ -86,7 +86,7 @@
     "sass-loader": "10.5.2",
     "storybook-addon-specifications": "2.2.0",
     "storybook-router": "0.3.4",
-    "style-loader": "2.0.0",
+    "style-loader": "3.3.4",
     "url-loader": "4.1.1",
     "webpack-hot-middleware": "2.26.1"
   },
