@@ -43,7 +43,7 @@
   "main": "lib/components.cjs.js",
   "module": "lib/components.es.js",
   "devDependencies": {
-    "@babel/register": "7.23.7",
+    "@babel/register": "7.24.6",
     "@storybook/addon-actions": "5.3.21",
     "@storybook/addon-info": "3.4.12",
     "@storybook/addon-links": "5.3.21",
