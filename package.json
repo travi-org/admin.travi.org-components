@@ -94,7 +94,7 @@
     "@travi/travi.org-theme": "0.2.0",
     "bootstrap-sass": "^3.4.1",
     "material-ui": "0.20.2",
-    "microformat-node": "2.0.1",
+    "microformat-node": "2.0.4",
     "react-bootstrap": "0.32.1",
     "react-router": "^3.2.0",
     "react-router-bootstrap": "^0.23.2",
