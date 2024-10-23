@@ -54,7 +54,7 @@
     "babel-loader": "8.3.0",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "babel-plugin-transform-require-ignore": "0.1.1",
-    "chai": "4.4.1",
+    "chai": "5.1.2",
     "cheerio": "1.0.0-rc.12",
     "codecov": "3.8.3",
     "commitlint-config-travi": "1.4.50",
