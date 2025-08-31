@@ -81,7 +81,7 @@
     "react-test-renderer": "16.10.1",
     "rimraf": "4.4.1",
     "rollup": "2.79.1",
-    "rollup-plugin-babel": "4.4.0",
+    "@rollup/plugin-babel": "5.0.0",
     "sass-lint": "1.13.1",
     "sass-loader": "10.5.2",
     "storybook-addon-specifications": "2.2.0",
